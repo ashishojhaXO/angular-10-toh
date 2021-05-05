@@ -56,6 +56,7 @@
     "ejs": "^2.6.1",
     "indent.js": "^0.3.4",
     "js-beautify": "^1.10.2",
+    "package.json": "^2.0.1",
     "require-from-string": "^2.0.2",
     "typescript": "^3.7.2",
     "yargs": "^11.0.0"
@@ -69,7 +70,6 @@
     "@angular/platform-browser": "^8.2.14",
     "@angular/router": "^8.2.14",
     "@ngx-translate/core": "^11.0.1",
-    "@rogers/oneview-components": "^5.1.11",
     "chart.js": "^2.9.3",
     "crypto-js": "^3.1.9-1",
     "date-fns": "^2.0.0",
