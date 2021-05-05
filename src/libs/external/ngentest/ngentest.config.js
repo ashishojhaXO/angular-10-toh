@@ -18,11 +18,11 @@ module.exports = {
   },
   // necessary directives used for a component test
   directives: [
-    'oneviewPermitted'
+    // 'oneviewPermitted'
   ], 
   // necessary pipes used for a component test
   pipes: [
-    'translate', 'phoneNumber', 'safeHtml'
+    // 'translate', 'phoneNumber', 'safeHtml'
   ],
   // when convert to JS, some codes need to be replaced to work 
   replacements: [

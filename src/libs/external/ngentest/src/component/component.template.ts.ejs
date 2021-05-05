@@ -25,8 +25,8 @@ class <%- pipe.charAt(0).toUpperCase() + pipe.slice(1) -%>Pipe implements PipeTr
 <% }) -%>
 
 describe('<%- className %>', () => {
-  let fixture;
-  let component;
+  let fixture: ComponentFixture<<%- className %>>;
+  let component: <%- className %>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -49,10 +49,10 @@ describe('<%- className %>', () => {
     component = fixture.debugElement.componentInstance;
   });
 
-  afterEach(() => {
-    component.ngOnDestroy = function() {};
-    fixture.destroy();
-  });
+  //afterEach(() => {
+    //component.ngOnDestroy = function() {};
+    //fixture.destroy();
+  //});
 
   it('should run #constructor()', async () => {
     expect(component).toBeTruthy();
