@@ -11,7 +11,8 @@ const config = require('./ngentest.config');
 const Util = require('./src/util.js');
 const FuncTestGen = require('./src/func-test-gen.js');
 
-const ComponentTestGen = require('./src/component/component-test-gen.js');
+// const ComponentTestGen = require('./src/component/component-test-gen.js');
+const ComponentTestGen = require('./src/component/ng/version/10/component-test-gen.js');
 const DirectiveTestGen = require('./src/directive/directive-test-gen.js');
 const InjectableTestGen = require('./src/injectable/injectable-test-gen.js');
 const PipeTestGen = require('./src/pipe/pipe-test-gen.js');
