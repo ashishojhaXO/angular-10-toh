@@ -7,7 +7,7 @@ const injectableTemplate = fs.readFileSync(path.join(__dirname, 'src', 'injectab
 const pipeTemplate = fs.readFileSync(path.join(__dirname, 'src', 'pipe', 'pipe.template.ts.ejs'), 'utf8');
 
 module.exports = {
-  // framework: 'karma', // or 'jest'
+  framework: 'karma', // or 'jest'
   // .spec file EJS templtes
   templates: {
     klass: klassTemplate,
