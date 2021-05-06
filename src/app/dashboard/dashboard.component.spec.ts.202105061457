@@ -9,6 +9,7 @@ import { Observable, of as observableOf, throwError } from 'rxjs';
 import { Component } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
 import { HeroService } from '../hero.service';
+import { compileNgModule } from '@angular/compiler';
 
 @Injectable()
 class MockHeroService {}
@@ -29,11 +30,15 @@ describe('DashboardComponent', () => {
       providers: [
         { provide: HeroService, useClass: MockHeroService }
       ]
-    }).overrideComponent(DashboardComponent, {
-
-    }).compileComponents();
+    })
+    // .overrideComponent(DashboardComponent, {})
+    // .compileComponents();
     fixture = TestBed.createComponent(DashboardComponent);
-    component = fixture.debugElement.componentInstance;
+    // component = fixture.debugElement.componentInstance;
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    // let component = TestBed.inject(DashboardComponent);
+    // let heroService = TestBed.inject(HeroService)
   });
 
   //afterEach(() => {
