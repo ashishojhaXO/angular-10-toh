@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const klassTemplate = fs.readFileSync(path.join(__dirname, 'src', 'class', 'class.template.ts.ejs'), 'utf8');
-const componentTemplate = fs.readFileSync(path.join(__dirname, 'src', 'component', 'component.template.ts.ejs'), 'utf8');
+const componentTemplate = fs.readFileSync(path.join(__dirname, 'src', 'component', 'ng', 'versions', '10', 'component.template.ts.ejs'), 'utf8');
 const directiveTemplate = fs.readFileSync(path.join(__dirname, 'src', 'directive', 'directive.template.ts.ejs'), 'utf8');
 const injectableTemplate = fs.readFileSync(path.join(__dirname, 'src', 'injectable', 'injectable.template.ts.ejs'), 'utf8');
 const pipeTemplate = fs.readFileSync(path.join(__dirname, 'src', 'pipe', 'pipe.template.ts.ejs'), 'utf8');
