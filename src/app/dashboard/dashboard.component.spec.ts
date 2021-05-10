@@ -52,11 +52,11 @@ describe('DashboardComponent', () => {
     // expect(component.getHeroes).toHaveBeenCalled();
   });
 
-  it('should run #getHeroes()', async () => {
-    component.heroService = component.heroService || {};
-    spyOn(component.heroService, 'getHeroes').and.returnValue(observableOf({}));
-    component.getHeroes();
-    // expect(component.heroService.getHeroes).toHaveBeenCalled();
-  });
+  // it('should run #getHeroes()', async () => {
+  //   component.heroService = component.heroService || {};
+  //   spyOn(component.heroService, 'getHeroes').and.returnValue(observableOf({}));
+  //   component.getHeroes();
+  //   // expect(component.heroService.getHeroes).toHaveBeenCalled();
+  // });
 
 });

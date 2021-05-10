@@ -12,7 +12,7 @@ import { DataManagerService } from '../data-manager.service';
 @Component({
   selector: 'app-total-data-details',
   templateUrl: './total-data-details.component.html',
-  styleUrls: ['./total-data-details.component.scss']
+  styleUrls: ['./total-data-details.component.scss'],
   providers: [SuspendcccService]
 })
 export class TotalDataDetailsComponent implements OnInit {
