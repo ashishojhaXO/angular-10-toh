@@ -44,10 +44,14 @@ describe('<%- className %>', () => {
     <% componentProviderMocks.forEach(mock => { %>
       <%- mock -%>
     <% }) %>
-    }).compileComponents();
-    fixture = TestBed.createComponent(<%- className %>);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    })
+    // .compileComponents();
+    .compileComponents()
+    .then( () => {
+      fixture = TestBed.createComponent(<%- className %>);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
   });
 
   //afterEach(() => {

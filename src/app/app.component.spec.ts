@@ -25,12 +25,20 @@ describe('AppComponent', () => {
       providers: [
 
       ]
-    }).overrideComponent(AppComponent, {
+    }).overrideComponent(AppComponent, {})
+    // .compileComponents();
+    .compileComponents()
+    // Added
+    .then( ()=> {
 
-    }).compileComponents();
-    fixture = TestBed.createComponent(AppComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+      fixture = TestBed.createComponent(AppComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+    // Added-
+    // fixture = TestBed.createComponent(AppComponent);
+    // component = fixture.componentInstance;
+    // fixture.detectChanges();
   });
 
   //afterEach(() => {
