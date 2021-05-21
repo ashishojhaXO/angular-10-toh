@@ -27,7 +27,8 @@ module.exports = function (config) {
     logLevel: config.LOG_DEBUG,
     autoWatch: true,
     browsers: [ 
-      'Chrome',
+      'Chromium',
+      // 'Chrome',
       // 'ChromeHeadless',
       // 'ChromeHeadlessCI'
     ],

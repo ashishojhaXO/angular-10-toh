@@ -33,25 +33,28 @@ describe('<%- className %>', () => {
       imports: [ FormsModule, ReactiveFormsModule ],
       declarations: [
         <%- className %>,
-        <%- config.pipes.map(e => e.charAt(0).toUpperCase() + e.slice(1) + 'Pipe').join(', ') %>,
-        <%- config.directives.map(e => e.charAt(0).toUpperCase() + e.slice(1) + 'Directive').join(', ') %>
+        <% if (config.pipes.length > 0) { %>
+          <%- config.pipes.map(e => e.charAt(0).toUpperCase() + e.slice(1) + 'Pipe').join(', ') %>,
+        <% } %>
+        <% if (config.directives.length > 0) { %>
+          <%- config.directives.map(e => e.charAt(0).toUpperCase() + e.slice(1) + 'Directive').join(', ') %>
+        <% } %>
       ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
       providers: [
         <%- providerMocks.providers.join(',\n        ') %>
       ]
-    }).overrideComponent(<%- className %>, {
-    <% componentProviderMocks.forEach(mock => { %>
-      <%- mock -%>
-    <% }) %>
     })
+    // .overrideComponent(<%- className %>, {
+    // <% componentProviderMocks.forEach(mock => { %>
+    //  <%- mock -%>
+    // <% }) %>
+    // })
     // .compileComponents();
     .compileComponents()
-    .then( () => {
       fixture = TestBed.createComponent(<%- className %>);
       component = fixture.componentInstance;
       fixture.detectChanges();
-    })
   });
 
   //afterEach(() => {
@@ -68,7 +71,11 @@ describe('<%- className %>', () => {
   <% } %>
   
   <% for(var key in functionTests) { %>
-  <%- functionTests[key] -%>
+    <% // NOTE: Only printing ng functions at the moment %>
+    <% pattern = /^ng/ %>
+    <% if(pattern.test(key) ) { %>
+      <%- functionTests[key] -%>
+    <% } %>
   <% } %>
   
 });

@@ -22,7 +22,6 @@ describe('DashboardComponent', () => {
       imports: [ FormsModule, ReactiveFormsModule ],
       declarations: [
         DashboardComponent,
-        ,
 
       ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
@@ -30,16 +29,16 @@ describe('DashboardComponent', () => {
         { provide: HeroService, useClass: MockHeroService }
       ]
     })
-    // .overrideComponent(DashboardComponent, {}) .compileComponents();
+    // .overrideComponent(DashboardComponent, {
+    // 
+    // })
+    // .compileComponents();
     .compileComponents()
-    .then( () => {
+    // .then( () => {
       fixture = TestBed.createComponent(DashboardComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
-
-      console.log("FIX-0--: ", fixture)
-      console.log("COMPONNN---: ", component);
-    })
+    // })
   });
 
   //afterEach(() => {
@@ -48,22 +47,13 @@ describe('DashboardComponent', () => {
   //});
 
   it('should run #constructor()', async () => {
-      console.log("FIX-1--: ", fixture)
-      console.log("COMPONNN 1---: ", component);
     expect(component).toBeTruthy();
   });
 
   it('should run #ngOnInit()', async () => {
-    spyOn(component, 'getHeroes');
-    component.ngOnInit();
-    // expect(component.getHeroes).toHaveBeenCalled();
-  });
 
-  // it('should run #getHeroes()', async () => {
-  //   component.heroService = component.heroService || {};
-  //   spyOn(component.heroService, 'getHeroes').and.returnValue(observableOf({}));
-  //   component.getHeroes();
-  //   // expect(component.heroService.getHeroes).toHaveBeenCalled();
-  // });
+    component.ngOnInit();
+
+  });
 
 });
