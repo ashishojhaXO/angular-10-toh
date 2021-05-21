@@ -1,3 +1,4 @@
+// WOW
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Pipe, PipeTransform, Injectable, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, Directive, Input, Output } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -29,7 +30,7 @@ describe('DashboardComponent', () => {
     // Create a fake TwainService object with a `getQuote()` spy
     const heroService = jasmine.createSpyObj('HeroService', ['getHeroes']);
     // Make the spy return a synchronous Observable with the test data
-    let getQuoteSpy = heroService.getHeroes.and.returnValue(of(testQuote));
+    let heroService_getHeroes = heroService.getHeroes.and.returnValue(of(testQuote));
 
     TestBed.configureTestingModule({
       imports: [ FormsModule, ReactiveFormsModule ],
@@ -52,7 +53,6 @@ describe('DashboardComponent', () => {
     //   fixture = TestBed.createComponent(DashboardComponent);
     //   component = fixture.componentInstance;
     //   fixture.detectChanges();
-
     //   console.log("FIX-0--: ", fixture)
     //   console.log("COMPONNN 0---: ", component);
     // })
