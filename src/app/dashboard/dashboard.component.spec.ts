@@ -52,18 +52,16 @@ describe('DashboardComponent', () => {
       ]
     })
     // .overrideComponent(DashboardComponent, {})
-    .compileComponents();
-    fixture = TestBed.createComponent(DashboardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    .compileComponents()
+    .then(() => {
+      fixture = TestBed.createComponent(DashboardComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
 
-    console.log("COMPO----: ", component)
-    console.log("FIX----: ", fixture)
   });
 
   it('should be DEFINED', async() => {
-    console.log("COMPO 2----: ", component)
-    console.log("FIX 2----: ", fixture)
     expect(component).toBeDefined();
   })
 
