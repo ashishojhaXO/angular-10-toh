@@ -66,10 +66,13 @@ describe('<%- className %>', () => {
     expect(component).toBeTruthy();
   });
 
+  // NOTE: accessorTests
   <% for(var key in accessorTests) { %>
   <%- accessorTests[key] -%>
   <% } %>
   
+  // NOTE: functionTests
+  <%- JSON.stringify(functionTests) %>
   <% for(var key in functionTests) { %>
     <% // NOTE: Only printing ng functions at the moment %>
     <% pattern = /^ng/ %>
