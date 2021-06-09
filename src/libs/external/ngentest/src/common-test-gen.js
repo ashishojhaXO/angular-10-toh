@@ -283,6 +283,9 @@ function getExistingTests(ejsData, existingTestCodes) {
 }
 
 function getGenerated (ejsData, options) {
+  console.log("in getGen: ejsDA: ", ejsData);
+  console.log("in getGen: option: ", options);
+
   let generated;
   const funcName = options.method;
   const specPath = path.resolve(this.tsPath.replace(/\.ts$/, '.spec.ts')); 

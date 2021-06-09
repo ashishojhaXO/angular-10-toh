@@ -28,6 +28,11 @@ class ComponentTestGen {
     this.getProviderMocks = CommonTestGen.getProviderMocks.bind(this);
     this.getGenerated = CommonTestGen.getGenerated.bind(this);
     this.writeGenerated = CommonTestGen.writeGenerated.bind(this);
+
+    console.log("klassMETHO: ", this.klassMethods);
+    console.log("getProv: ", this.getProviderMocks);
+    console.log("getGener: ", this.getGenerated);
+    console.log("writeGener: ", this.writeGenerated);
   }
 
   getData () {
