@@ -72,12 +72,18 @@ describe('<%- className %>', () => {
   <% } %>
   
   // NOTE: functionTests
+  <% // for(var key in functionTests) { %>
+    <% // NOTE: Only printing ng functions at the moment %>
+    <% // pattern = /^ng/ %>
+    <% // if(pattern.test(key) ) { %>
+      <%- // functionTests[key] -%>
+    <% // } %>
+  <% // } %>
+
+  // NOTE: functionTests-2
   <% for(var key in functionTests) { %>
     <% // NOTE: Only printing ng functions at the moment %>
-    <% pattern = /^ng/ %>
-    <% if(pattern.test(key) ) { %>
       <%- functionTests[key] -%>
-    <% } %>
   <% } %>
   
 });

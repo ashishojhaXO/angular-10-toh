@@ -287,10 +287,19 @@ function getGenerated (ejsData, options) {
   const funcName = options.method;
   const specPath = path.resolve(this.tsPath.replace(/\.ts$/, '.spec.ts')); 
   const existingTestCodes = fs.existsSync(specPath) && fs.readFileSync(specPath, 'utf8');
+
+  console.log("funcName, existingTestCodes: ", funcName, existingTestCodes);
+
   if (funcName) {
     // if user asks to generate only one function
     generated = ejsData.functionTests[funcName] || ejsData.accessorTests[funcName];
+  console.log("IF generated : ", generated );
   } else if (existingTestCodes && specPath && !options.force && !options.forcePrint) {
+
+    console.log("existingTestCodes  ", existingTestCodes );
+    console.log("specPath : ", specPath );
+    console.log("options: ", options);
+
     // if there is existing tests, then add only new function tests at the end
     const existingTests = getExistingTests(ejsData, existingTestCodes);
     const newTests = [];
@@ -309,12 +318,15 @@ function getGenerated (ejsData, options) {
           return `${m1}${newCodes}${m2}`;
         });
       }
+  console.log("ELSE IF - IF generated : ", generated );
     } else {
       generated = ejs.render(this.template, ejsData).replace(/\n\s+$/gm, '\n');
+  console.log("ElSE IF - Else generated : ", generated );
     }
   } else {
     // if no existing tests
     generated = ejs.render(this.template, ejsData).replace(/\n\s+$/gm, '\n');
+  console.log("ElSE generated : ", generated );
   }
   return generated;
 }
