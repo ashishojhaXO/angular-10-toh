@@ -12,9 +12,9 @@ import { HeroService } from '../hero.service';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from '../message.service';
 
-describe('DashboardComponent', () => {
-  let fixture: ComponentFixture<DashboardComponent>;
+describe('DashboardComponent WOW', () => {
   let component: DashboardComponent;
+  let fixture: ComponentFixture<DashboardComponent>;
 
   // NOTE: For Services
   // 1st Describe
