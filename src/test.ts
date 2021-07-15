@@ -26,10 +26,10 @@ getTestBed().initTestEnvironment(
 );
 // Then we find all the tests.
 // Ori
-// const context = require.context('./', true, /\.spec\.ts$/);
+const context = require.context('./', true, /\.spec\.ts$/);
 // Ori-
 // Add
-const context = require.context('./app/dashboard/', true, /\.spec\.ts$/);
+// const context = require.context('./app/dashboard/', true, /\.spec\.ts$/);
 // Add-
 // And load the modules.
 context.keys().map(context);
