@@ -54,24 +54,24 @@ describe('DashboardComponent', () => {
 
   // NOTE: NEW: functionTests
 
-    it('should run #ngOnInit()', async () => {
+  it('should run #ngOnInit()', async () => {
 
-      component.ngOnInit();
+    component.ngOnInit();
 
-    });
+  });
 
-    it('should run #getHeroes()', async () => {
-      component.heroService = component.heroService || {};
-spyOn(component.heroService, 'getHeroes').and.returnValue(observableOf({}));
-      component.getHeroes();
-      // expect(component.heroService.getHeroes).toHaveBeenCalled();
-    });
+  it('should run #getHeroes()', async () => {
+    component.heroService = component.heroService || {};
+    spyOn(component.heroService, 'getHeroes').and.returnValue(observableOf({}));
+    component.getHeroes();
+    // expect(component.heroService.getHeroes).toHaveBeenCalled();
+  });
 
-    it('should run #searchHeroes()', async () => {
-      component.heroService = component.heroService || {};
-spyOn(component.heroService, 'searchHeroes').and.returnValue(observableOf({}));
-      component.searchHeroes();
-      // expect(component.heroService.searchHeroes).toHaveBeenCalled();
-    });
+  it('should run #getMoreHeroes()', async () => {
+    component.heroService = component.heroService || {};
+    spyOn(component.heroService, 'getHeroes').and.returnValue(observableOf({}));
+    component.getMoreHeroes();
+    // expect(component.heroService.getHeroes).toHaveBeenCalled();
+  });
 
 });

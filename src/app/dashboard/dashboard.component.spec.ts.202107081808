@@ -32,11 +32,13 @@ describe('DashboardComponent', () => {
     // .overrideComponent(DashboardComponent, {
     // 
     // })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(DashboardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    // .compileComponents();
+    .compileComponents()
+    // .then( () => {
+      fixture = TestBed.createComponent(DashboardComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    // })
   });
 
   //afterEach(() => {
@@ -48,30 +50,10 @@ describe('DashboardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // NOTE: ORI: accessorTests
+  it('should run #ngOnInit()', async () => {
 
-  // NOTE: ORI: functionTests
+    component.ngOnInit();
 
-  // NOTE: NEW: functionTests
-
-    it('should run #ngOnInit()', async () => {
-
-      component.ngOnInit();
-
-    });
-
-    it('should run #getHeroes()', async () => {
-      component.heroService = component.heroService || {};
-spyOn(component.heroService, 'getHeroes').and.returnValue(observableOf({}));
-      component.getHeroes();
-      // expect(component.heroService.getHeroes).toHaveBeenCalled();
-    });
-
-    it('should run #searchHeroes()', async () => {
-      component.heroService = component.heroService || {};
-spyOn(component.heroService, 'searchHeroes').and.returnValue(observableOf({}));
-      component.searchHeroes();
-      // expect(component.heroService.searchHeroes).toHaveBeenCalled();
-    });
+  });
 
 });

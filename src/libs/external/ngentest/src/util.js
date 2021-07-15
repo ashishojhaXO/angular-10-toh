@@ -10,6 +10,10 @@ class Util {
   static get DEBUG () { return !!Util.__debug; }
   static set DEBUG (bool) { Util.__debug = bool; }
 
+static clog() {
+  console.log(arguments);
+}
+
   static getCode(node, code) {
     return code.substring(node.start, node.end);
   }
