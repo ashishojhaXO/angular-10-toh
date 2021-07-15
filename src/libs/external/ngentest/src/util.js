@@ -609,25 +609,51 @@ class Util {
             asserts.push([thisName, key1, key2]);
           } else if (Array.isArray(value2)) {
             // const fnValue2 = Util.objToJS(value2).replace(/\{\s+\}/gm, '{}');
-            js.push(`${thisName}.${key1}.${key2} = ['gentest']`);
+            // ORI
+            // js.push(`${thisName}.${key1}.${key2} = ['gentest']`);
+            // ORI-
+            // ADD
+            js.push(`(${thisName} as any).${key1}.${key2} = ['gentest']`);
+            // ADD-
           } else {
             const objVal21stKey = Object.keys(value2)[0];
             if (objVal21stKey && objVal21stKey.match(arrFuncRE)) {
               if (typeof value2[objVal21stKey] === 'function') {
                 const arrElValue = value2[objVal21stKey]();
                 const arrElValueJS = Util.objToJS(arrElValue);
-                js.push(`${thisName}.${key1}.${key2} = ${arrElValueJS}`);
+                // ORI
+                // js.push(`${thisName}.${key1}.${key2} = ${arrElValueJS}`);
+                // ORI-
+                // ADD
+                js.push(`(${thisName} as any).${key1}.${key2} = ${arrElValueJS}`);
+                // ADD-
               } else {
-                js.push(`${thisName}.${key1}.${key2} = ['${key2}']`);
+                // js.push(`${thisName}.${key1}.${key2} = ['${key2}']`);
+                js.push(`(${thisName} as any).${key1}.${key2} = ['${key2}']`);
               }
             } else if (objVal21stKey && objVal21stKey.match(strFuncRE)) {
-              js.push(`${thisName}.${key1}.${key2} = '${key2}'`);
+              // ORI
+              // js.push(`${thisName}.${key1}.${key2} = '${key2}'`);
+              // ORI-
+              // ADD
+              js.push(`(${thisName} as any).${key1}.${key2} = '${key2}'`);
+              // ADD-
             } else {
               const objValue2 = Util.objToJS(value2).replace(/\{\s+\}/gm, '{}');
               if (objValue2 === '{}') {
-                js.push(`${thisName}.${key1}.${key2} = '${key2}'`);
+                // ORI
+                // js.push(`${thisName}.${key1}.${key2} = '${key2}'`);
+                // ORI-
+                // ADD
+                js.push(`(${thisName} as any).${key1}.${key2} = '${key2}'`);
+                // ADD-
               } else {
-                js.push(`${thisName}.${key1}.${key2} = ${objValue2}`);
+                // ORI
+                // js.push(`${thisName}.${key1}.${key2} = ${objValue2}`);
+                // ORI-
+                // ADD
+                js.push(`(${thisName} as any).${key1}.${key2} = ${objValue2}`);
+                // ADD-
               }
             }
           }
@@ -650,7 +676,12 @@ class Util {
               asserts.push([key1, key2, key3]);
             } else if (value3) {
               const objValue3 = Util.objToJS(value3).replace(/\{\s+\}/gm, '{}');
-              js.push(`${key1}.${key2}.${key3} = ${objValue3}`);
+              // ORI
+              // js.push(`${key1}.${key2}.${key3} = ${objValue3}`);
+              // ORI-
+              // ADD
+              js.push(`(${key1} as any).${key2}.${key3} = ${objValue3}`);
+              // ADD-
             }
           });
         }
