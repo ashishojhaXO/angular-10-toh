@@ -1,6 +1,5 @@
-// ngentest.config.js not found. Using default config instead.
-  // *** config *** 
- config = {
+ngentest.config.js not found. Using default config instead.
+  *** config *** {
   framework: 'karma',
   templates: {
     klass: "import { async } from '@angular/core/testing';\n" +
@@ -232,10 +231,8 @@
   includeMatch: [ /(component|directive|pipe|service).ts/ ],
   excludeMatch: []
 }
-
-  // *** EXPRESSION *** 0 this.heroService = heroService;
-// [Arguments] 
-{
+  *** EXPRESSION *** 0 this.heroService = heroService;
+[Arguments] {
   '0': 'fn setMOCKDATA: ',
   '1': Node {
     type: 'ExpressionStatement',
@@ -259,9 +256,8 @@
   },
   '3': undefined
 }
-    // *** EXPRESSION ExpressionStatement *** this.heroService = heroService;
-// [Arguments] 
-{
+    *** EXPRESSION ExpressionStatement *** this.heroService = heroService;
+[Arguments] {
   '0': 'fn setMOCKDATA: ',
   '1': Node {
     type: 'AssignmentExpression',
@@ -398,22 +394,10 @@
   '3': undefined
 }
     *** EXPRESSION ThisExpression *** this
------------HERE--------
 [36m
 PROCESSING #ngOnInit[0m
-[Arguments] {
-  '0': 'funcMockData: ',
-  '1': { isAsync: false, props: {}, params: {}, map: {}, globals: {} }
-}
+[Arguments] { '0': '----------- getFuncMockJS: ' }
 [Arguments] { '0': 'allFuncMockJS : ', '1': [] }
-[Arguments] { '0': 'asserts: ', '1': [] }
-[Arguments] { '0': 'funcMockJS : ', '1': [] }
-[Arguments] { '0': 'funcParamJS : ', '1': '' }
-[Arguments] { '0': 'funcAssertJS : ', '1': [] }
-[Arguments] { '0': 'jsToRun : ', '1': 'component.ngOnInit()' }
-[Arguments] { '0': 'itBlockName : ', '1': 'should run #ngOnInit()' }
-[Arguments] { '0': 'asyncStr : ', '1': '' }
------------HERE--------
 [36m
 PROCESSING #getHeroes[0m
   *** EXPRESSION *** 0 this.heroService.getHeroes() .subscribe(heroes => this.heroes = heroes.slice(1, 5));
@@ -787,16 +771,30 @@ PROCESSING #getHeroes[0m
   '3': undefined
 }
     *** EXPRESSION ThisExpression *** this
+[Arguments] { '0': '----------- getFuncMockJS: ' }
 [Arguments] {
-  '0': 'funcMockData: ',
-  '1': {
-    isAsync: false,
-    props: { heroService: [Object], heroes: {} },
-    params: {},
-    map: {},
-    globals: {}
-  }
+  '0': 'value: ',
+  '1': { getHeroes: [Function (anonymous)] }
 }
+[Arguments] {
+  '0': 'valueFIletered: ',
+  '1': [ [ 'getHeroes', [Function (anonymous)] ] ]
+}
+[Arguments] {
+  '0': 'key2, value2: ',
+  '1': 'getHeroes',
+  '2': [Function (anonymous)]
+}
+[Arguments] {
+  '0': '=======NOW JS: ',
+  '1': [ 'component.heroService = component.heroService || {}' ]
+}
+[Arguments] {
+  '0': '${thisName}.${key1} = ${thisName}.${key1} || {}: ',
+  '1': 'component.heroService = component.heroService || {}'
+}
+[Arguments] { '0': 'value: ', '1': {} }
+[Arguments] { '0': 'valueFIletered: ', '1': [] }
 [Arguments] {
   '0': 'allFuncMockJS : ',
   '1': [
@@ -804,26 +802,6 @@ PROCESSING #getHeroes[0m
     "spyOn(component.heroService, 'getHeroes').and.returnValue(observableOf({}))"
   ]
 }
-[Arguments] {
-  '0': 'asserts: ',
-  '1': [ [ 'component', 'heroService', 'getHeroes' ] ]
-}
-[Arguments] {
-  '0': 'funcMockJS : ',
-  '1': [
-    'component.heroService = component.heroService || {}',
-    "spyOn(component.heroService, 'getHeroes').and.returnValue(observableOf({}))"
-  ]
-}
-[Arguments] { '0': 'funcParamJS : ', '1': '' }
-[Arguments] {
-  '0': 'funcAssertJS : ',
-  '1': [ '// expect(component.heroService.getHeroes).toHaveBeenCalled()' ]
-}
-[Arguments] { '0': 'jsToRun : ', '1': 'component.getHeroes()' }
-[Arguments] { '0': 'itBlockName : ', '1': 'should run #getHeroes()' }
-[Arguments] { '0': 'asyncStr : ', '1': '' }
------------HERE--------
 [36m
 PROCESSING #searchHeroes[0m
   *** EXPRESSION *** 0 this.heroService.searchHeroes("") .subscribe(heroes => this.heroes = heroes.slice(0, 5));
@@ -1214,98 +1192,35 @@ PROCESSING #searchHeroes[0m
   '3': undefined
 }
     *** EXPRESSION ThisExpression *** this
+[Arguments] { '0': '----------- getFuncMockJS: ' }
 [Arguments] {
-  '0': 'funcMockData: ',
-  '1': {
-    isAsync: false,
-    props: { heroService: [Object], heroes: {} },
-    params: {},
-    map: {},
-    globals: {}
-  }
+  '0': 'value: ',
+  '1': { searchHeroes: [Function (anonymous)] }
 }
+[Arguments] {
+  '0': 'valueFIletered: ',
+  '1': [ [ 'searchHeroes', [Function (anonymous)] ] ]
+}
+[Arguments] {
+  '0': 'key2, value2: ',
+  '1': 'searchHeroes',
+  '2': [Function (anonymous)]
+}
+[Arguments] {
+  '0': '=======NOW JS: ',
+  '1': [ 'component.heroService = component.heroService || {}' ]
+}
+[Arguments] {
+  '0': '${thisName}.${key1} = ${thisName}.${key1} || {}: ',
+  '1': 'component.heroService = component.heroService || {}'
+}
+[Arguments] { '0': 'value: ', '1': {} }
+[Arguments] { '0': 'valueFIletered: ', '1': [] }
 [Arguments] {
   '0': 'allFuncMockJS : ',
   '1': [
     'component.heroService = component.heroService || {}',
     "spyOn(component.heroService, 'searchHeroes').and.returnValue(observableOf({}))"
   ]
-}
-[Arguments] {
-  '0': 'asserts: ',
-  '1': [ [ 'component', 'heroService', 'searchHeroes' ] ]
-}
-[Arguments] {
-  '0': 'funcMockJS : ',
-  '1': [
-    'component.heroService = component.heroService || {}',
-    "spyOn(component.heroService, 'searchHeroes').and.returnValue(observableOf({}))"
-  ]
-}
-[Arguments] { '0': 'funcParamJS : ', '1': '' }
-[Arguments] {
-  '0': 'funcAssertJS : ',
-  '1': [
-    '// expect(component.heroService.searchHeroes).toHaveBeenCalled()'
-  ]
-}
-[Arguments] { '0': 'jsToRun : ', '1': 'component.searchHeroes()' }
-[Arguments] {
-  '0': 'itBlockName : ',
-  '1': 'should run #searchHeroes()'
-}
-[Arguments] { '0': 'asyncStr : ', '1': '' }
-[Arguments] {
-  '0': 'ejsData functionTESTS: ',
-  '1': {
-    className: 'DashboardComponent',
-    importMocks: [
-      "import { Component } from '@angular/core';",
-      "import { DashboardComponent } from './dashboard.component';",
-      "import { HeroService } from '../hero.service';"
-    ],
-    inputMocks: { html: [], js: [] },
-    outputMocks: { html: [], js: [] },
-    componentProviderMocks: [],
-    selector: { type: 'element', value: 'app-dashboard', name: 'app-dashboard' },
-    ctorParamJs: '{}',
-    providerMocks: { providers: [Array], mocks: [Array] },
-    accessorTests: {},
-    functionTests: {
-      ngOnInit: '\n' +
-        "    it('should run #ngOnInit()', async () => {\n" +
-        '      \n' +
-        '      component.ngOnInit();\n' +
-        '      \n' +
-        '    });\n' +
-        '    ',
-      getHeroes: '\n' +
-        "    it('should run #getHeroes()', async () => {\n" +
-        '      component.heroService = component.heroService || {};\n' +
-        "spyOn(component.heroService, 'getHeroes').and.returnValue(observableOf({}));\n" +
-        '      component.getHeroes();\n' +
-        '      // expect(component.heroService.getHeroes).toHaveBeenCalled();\n' +
-        '    });\n' +
-        '    ',
-      searchHeroes: '\n' +
-        "    it('should run #searchHeroes()', async () => {\n" +
-        '      component.heroService = component.heroService || {};\n' +
-        "spyOn(component.heroService, 'searchHeroes').and.returnValue(observableOf({}));\n" +
-        '      component.searchHeroes();\n' +
-        '      // expect(component.heroService.searchHeroes).toHaveBeenCalled();\n' +
-        '    });\n' +
-        '    '
-    },
-    config: {
-      framework: 'karma',
-      templates: [Object],
-      directives: [],
-      pipes: [],
-      replacements: [Array],
-      providerMocks: [Object],
-      includeMatch: [Array],
-      excludeMatch: []
-    }
-  }
 }
 Generated unit test to /home/ashish/proj/office/f7/langs/typescript/toh-ng-10/app/src/app/dashboard/dashboard.component.spec.ts

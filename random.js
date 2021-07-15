@@ -406,9 +406,10 @@ PROCESSING #ngOnInit[0m
 [Arguments] { '0': 'funcMockJS : ', '1': [] }
 [Arguments] { '0': 'funcParamJS : ', '1': '' }
 [Arguments] { '0': 'funcAssertJS : ', '1': [] }
-[Arguments] { '0': 'jsToRun : ', '1': 'component.ngOnInit()' }
-[Arguments] { '0': 'itBlockName : ', '1': 'should run #ngOnInit()' }
-[Arguments] { '0': 'asyncStr : ', '1': '' }
+[Arguments] {
+  '0': 'jsToRun : ',
+  '1': '( component as any).ngOnInit()'
+}
 -----------HERE--------
 [36m
 PROCESSING #getHeroes[0m
@@ -816,9 +817,10 @@ PROCESSING #getHeroes[0m
   '0': 'funcAssertJS : ',
   '1': [ '// expect(component.heroService.getHeroes).toHaveBeenCalled()' ]
 }
-[Arguments] { '0': 'jsToRun : ', '1': 'component.getHeroes()' }
-[Arguments] { '0': 'itBlockName : ', '1': 'should run #getHeroes()' }
-[Arguments] { '0': 'asyncStr : ', '1': '' }
+[Arguments] {
+  '0': 'jsToRun : ',
+  '1': '( component as any).getHeroes()'
+}
 -----------HERE--------
 [36m
 PROCESSING #searchHeroes[0m
@@ -1245,64 +1247,9 @@ PROCESSING #searchHeroes[0m
     '// expect(component.heroService.searchHeroes).toHaveBeenCalled()'
   ]
 }
-[Arguments] { '0': 'jsToRun : ', '1': 'component.searchHeroes()' }
 [Arguments] {
-  '0': 'itBlockName : ',
-  '1': 'should run #searchHeroes()'
+  '0': 'jsToRun : ',
+  '1': '( component as any).searchHeroes()'
 }
-[Arguments] { '0': 'asyncStr : ', '1': '' }
-[Arguments] {
-  '0': 'ejsData functionTESTS: ',
-  '1': {
-    className: 'DashboardComponent',
-    importMocks: [
-      "import { Component } from '@angular/core';",
-      "import { DashboardComponent } from './dashboard.component';",
-      "import { HeroService } from '../hero.service';"
-    ],
-    inputMocks: { html: [], js: [] },
-    outputMocks: { html: [], js: [] },
-    componentProviderMocks: [],
-    selector: { type: 'element', value: 'app-dashboard', name: 'app-dashboard' },
-    ctorParamJs: '{}',
-    providerMocks: { providers: [Array], mocks: [Array] },
-    accessorTests: {},
-    functionTests: {
-      ngOnInit: '\n' +
-        "    it('should run #ngOnInit()', async () => {\n" +
-        '      \n' +
-        '      component.ngOnInit();\n' +
-        '      \n' +
-        '    });\n' +
-        '    ',
-      getHeroes: '\n' +
-        "    it('should run #getHeroes()', async () => {\n" +
-        '      component.heroService = component.heroService || {};\n' +
-        "spyOn(component.heroService, 'getHeroes').and.returnValue(observableOf({}));\n" +
-        '      component.getHeroes();\n' +
-        '      // expect(component.heroService.getHeroes).toHaveBeenCalled();\n' +
-        '    });\n' +
-        '    ',
-      searchHeroes: '\n' +
-        "    it('should run #searchHeroes()', async () => {\n" +
-        '      component.heroService = component.heroService || {};\n' +
-        "spyOn(component.heroService, 'searchHeroes').and.returnValue(observableOf({}));\n" +
-        '      component.searchHeroes();\n' +
-        '      // expect(component.heroService.searchHeroes).toHaveBeenCalled();\n' +
-        '    });\n' +
-        '    '
-    },
-    config: {
-      framework: 'karma',
-      templates: [Object],
-      directives: [],
-      pipes: [],
-      replacements: [Array],
-      providerMocks: [Object],
-      includeMatch: [Array],
-      excludeMatch: []
-    }
-  }
-}
-Backup the exisiting file to /home/ashish/proj/office/f7/langs/typescript/toh-ng-10/app/src/app/dashboard/dashboard.component.spec.ts.202107151021
+Backup the exisiting file to /home/ashish/proj/office/f7/langs/typescript/toh-ng-10/app/src/app/dashboard/dashboard.component.spec.ts.202107151028
 Generated unit test to /home/ashish/proj/office/f7/langs/typescript/toh-ng-10/app/src/app/dashboard/dashboard.component.spec.ts

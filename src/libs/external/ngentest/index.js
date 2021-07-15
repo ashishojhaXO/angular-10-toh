@@ -107,26 +107,26 @@ function getTestGenerator (tsPath, config) {
 
 // NOTE: TODO: HERE: THIS is the REAL DEAL
 function getFuncTest(Klass, funcName, funcType, angularType) {
-  console.log("-----------HERE--------");
+  // console.log("-----------HERE--------");
 
   Util.DEBUG &&
     console.log('\x1b[36m%s\x1b[0m', `\nPROCESSING #${funcName}`);
 
   const funcMockData = getFuncMockData(Klass, funcName, funcType);
 
-  Util.clog("funcMockData: ", funcMockData  );
+  // Util.clog("funcMockData: ", funcMockData  );
 
   const [allFuncMockJS, asserts] = Util.getFuncMockJS(funcMockData, angularType);
-  Util.clog("allFuncMockJS : ", allFuncMockJS );
-  Util.clog("asserts: ", asserts);
+  // Util.clog("allFuncMockJS : ", allFuncMockJS );
+  // Util.clog("asserts: ", asserts);
 
   const funcMockJS = [...new Set(allFuncMockJS)];
-  Util.clog("funcMockJS : ", funcMockJS );
+  // Util.clog("funcMockJS : ", funcMockJS );
   const funcParamJS = Util.getFuncParamJS(funcMockData.params);
-  Util.clog("funcParamJS : ", funcParamJS );
+  // Util.clog("funcParamJS : ", funcParamJS );
 
   const funcAssertJS = asserts.map(el => `// expect(${el.join('.')}).toHaveBeenCalled()`);
-  Util.clog("funcAssertJS : ", funcAssertJS );
+  // Util.clog("funcAssertJS : ", funcAssertJS );
 
   // ORI
   // 1
@@ -138,23 +138,23 @@ function getFuncTest(Klass, funcName, funcType, angularType) {
   // ADD
   // 1
   const jsToRun = 
-    funcType === 'set' ? `${angularType}.${funcName} = ${funcParamJS || '{}'}`: 
-    funcType === 'get' ? `const ${funcName} = ${angularType}.${funcName}` : 
-    `${angularType}.${funcName}(${funcParamJS})`;
+    funcType === 'set' ? `(${angularType} as any).${funcName} = ${funcParamJS || '[]'}`: 
+    funcType === 'get' ? `const ${funcName} = (${angularType} as any).${funcName}` : 
+    `( ${angularType} as any).${funcName}(${funcParamJS})`;
   // ADD-
 
-  Util.clog("jsToRun : ", jsToRun );
+  // Util.clog("jsToRun : ", jsToRun );
 
   const itBlockName = 
     funcType === 'method' ? `should run #${funcName}()` : 
     funcType === 'get' ? `should run GetterDeclaration #${funcName}` :
     funcType === 'set' ? `should run SetterDeclaration #${funcName}` : '';
 
-  Util.clog("itBlockName : ", itBlockName );
+  // Util.clog("itBlockName : ", itBlockName );
 
   const asyncStr = funcMockData.isAsync ? 'await ' : '';
 
-  Util.clog("asyncStr : ", asyncStr );
+  // Util.clog("asyncStr : ", asyncStr );
 
   return `
     it('${itBlockName}', async () => {
@@ -236,15 +236,19 @@ function run (tsFile) {
     testGenerator.klassMethods.forEach(method => {
       const methodName = method.node.name.escapedText;
       try {
+        // ORI
         // ejsData.functionTests[methodName] =
         //   Util.indent(getFuncTest(Klass, methodName, 'method', angularType), '  ');
+        // ORI-
 
+        // ADD
         ejsData.functionTests[methodName] =
-          // Util.indent(
+          Util.indent(
             getFuncTest(Klass, methodName, 'method', angularType)
-            // , 
-            // '  '
-            // );
+            , 
+            '  '
+            );
+        // ADD-
 
         // Util.clog("try: ", methodName, );
         // Util.clog("try ejsData.functionTests[methodName]: ", ejsData.functionTests[methodName]);
@@ -263,7 +267,7 @@ function run (tsFile) {
       }
     });
 
-    Util.clog("ejsData functionTESTS: ", ejsData);
+    // Util.clog("ejsData functionTESTS: ", ejsData);
 
     // console.log('..................................................................')
     // console.log(ejsData)
