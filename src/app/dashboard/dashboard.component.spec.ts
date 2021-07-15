@@ -55,12 +55,12 @@ describe('DashboardComponent', () => {
   // NOTE: NEW: functionTests
 
   it('should run #ngOnInit()', async () => {
-
+    console.log("COMP-------: ", component);
     ( component as any).ngOnInit();
-
   });
 
   it('should run #getHeroes()', async () => {
+    console.log("COMP 2-------: ", component);
     (component as any).heroService = (component as any).heroService || {};
     spyOn((component as any).heroService, 'getHeroes').and.returnValue(observableOf({}));
     ( component as any).getHeroes();
@@ -68,6 +68,7 @@ describe('DashboardComponent', () => {
   });
 
   it('should run #searchHeroes()', async () => {
+    console.log("COMP 3-------: ", component);
     (component as any).heroService = (component as any).heroService || {};
     spyOn((component as any).heroService, 'searchHeroes').and.returnValue(observableOf({}));
     ( component as any).searchHeroes();
