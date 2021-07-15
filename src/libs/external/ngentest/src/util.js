@@ -10,9 +10,9 @@ class Util {
   static get DEBUG () { return !!Util.__debug; }
   static set DEBUG (bool) { Util.__debug = bool; }
 
-static clog() {
-  console.log(arguments);
-}
+  static clog() {
+    console.log(arguments);
+  }
 
   static getCode(node, code) {
     return code.substring(node.start, node.end);
@@ -484,7 +484,7 @@ static clog() {
 
   // HERE: REAL DEAL 3
   static getMockFn(keys, returns) { // e.g. x, y, z, {a:1, b:2}
-      console.log("----keys reutrss: ", keys, returns);
+      // console.log("----keys reutrss: ", keys, returns);
     if (Util.FRAMEWORK === 'karma') {
       const lastVarName = keys.slice(-1);
       // ORI
@@ -584,7 +584,7 @@ static clog() {
             } else if (typeof funcRetVal === 'object' && funcRet1stKey) {
               js.push(Util.getMockFn([thisName, key1, key2], `${Util.objToJS(funcRetVal)}`));
               // ADD
-              Util.clog("----elif: ", thisName, key1, key2, funcRetVal);
+              // Util.clog("----elif: ", thisName, key1, key2, funcRetVal);
               // ADD-
             } else {
               js.push(Util.getMockFn([thisName, key1, key2]));
