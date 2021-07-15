@@ -66,18 +66,23 @@ describe('<%- className %>', () => {
     expect(component).toBeTruthy();
   });
 
-  // NOTE: accessorTests
+  // NOTE: ORI: accessorTests
   <% for(var key in accessorTests) { %>
   <%- accessorTests[key] -%>
   <% } %>
   
-  // NOTE: functionTests
+  // NOTE: ORI: functionTests
+  <%# for(var key in functionTests) { %>
+    <%# // NOTE: Only printing ng functions at the moment %>
+    <%# pattern = /^ng/ %>
+    <%# if(pattern.test(key) ) { %>
+      <%#- functionTests[key] -%>
+    <%# } %>
+  <%# } %>
+
+  // NOTE: NEW: functionTests
   <% for(var key in functionTests) { %>
-    <% // NOTE: Only printing ng functions at the moment %>
-    <% pattern = /^ng/ %>
-    <% if(pattern.test(key) ) { %>
-      <%- functionTests[key] -%>
-    <% } %>
+    <%- functionTests[key] -%>
   <% } %>
   
 });
